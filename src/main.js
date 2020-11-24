@@ -12,29 +12,38 @@
 //
 // * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
+import Vue from "vue"; 
+import App from "./App.vue"; 
+import router from "./router"; 
 
-import MaterialKit from "./plugins/material-kit";
+import MaterialKit from "./plugins/material-kit"; 
 
-Vue.config.productionTip = false;
+import VueYoutube from 'vue-youtube'
+import VueFacebookPage from 'vue-facebook-page'
 
-Vue.use(MaterialKit);
+Vue.config.productionTip = false; 
 
-const NavbarStore = {
-  showNavbar: false
-};
+Vue.use(MaterialKit); 
 
-Vue.mixin({
-  data() {
-    return {
-      NavbarStore
-    };
-  }
-});
+Vue.use(VueYoutube)
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount("#app");
+// The plugin is loaded here.
+// You have to pass your FB app Id as a second parameter
+Vue.use(VueFacebookPage, 219660669313598)
+
+const NavbarStore =  {
+showNavbar:false
+}; 
+
+Vue.mixin( {
+data() {
+return {
+NavbarStore
+    }; 
+}
+}); 
+
+new Vue( {
+router, 
+render:h => h(App)
+}).$mount("#app"); 
