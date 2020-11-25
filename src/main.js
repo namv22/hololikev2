@@ -20,6 +20,8 @@ import MaterialKit from "./plugins/material-kit";
 
 import VueYoutube from 'vue-youtube'
 import VueFacebookPage from 'vue-facebook-page'
+import _ from 'lodash'
+import { firestorePlugin } from 'vuefire'
 
 Vue.config.productionTip = false; 
 
@@ -30,6 +32,8 @@ Vue.use(VueYoutube)
 // The plugin is loaded here.
 // You have to pass your FB app Id as a second parameter
 Vue.use(VueFacebookPage, 219660669313598)
+
+Vue.use(firestorePlugin)
 
 const NavbarStore =  {
 showNavbar:false
