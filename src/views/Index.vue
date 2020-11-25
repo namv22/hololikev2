@@ -294,7 +294,7 @@ export default {
   props: {
     image: {
       type: String,
-      default: require("@/assets/img/vue-mk-header.jpg")
+      default: require("@/assets/img/KoroneRisu.jpg")
     },
     leaf4: {
       type: String,
