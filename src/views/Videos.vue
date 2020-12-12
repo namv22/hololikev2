@@ -1,7 +1,8 @@
 <template>
 <div class="wrapper">
     <div class="md-layout">
-        <div class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto" id="posts" v-for="post in orderedPosts" v-bind:key="post.name">
+        <div class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto"
+         id="posts" v-for="post in orderedPosts" v-bind:key="post.name">
             <login-card header-color="green">
                 <h4 slot="title" class="card-title">{{post.name}}</h4>
                 <md-field class="md-form-group" slot="inputs">
@@ -10,13 +11,11 @@
                     </md-card-media>
                 </md-field>
                 <md-button slot="footer" class="md-simple md-success md-lg">
-                    Get Started
+                    Xem
                 </md-button>
             </login-card>
         </div>
     </div>
-    <br />
-    <br />
 </div>
 </template>
 
@@ -70,4 +69,8 @@ export default {
 };
 </script>
 
-<style lang="css"></style>
+<style lang="css">
+.md-layout-item{
+    margin-bottom: 50px;
+}
+</style>
