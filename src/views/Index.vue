@@ -12,26 +12,29 @@
             </div>
         </div>
     </parallax>
-    <div class="main main-raised">
+    <!-- <div class="main main-raised">
         <div class="section section-tabs">
-            <div class="container">
-                <!-- <tabs></tabs> -->
-                <videos></videos>
-            </div>
+            <div class="container"> -->
+    <!-- <tabs></tabs> -->
+    <!-- <videos></videos> -->
+    <landing></landing>
+    <!-- </div>
         </div>
 
-    </div>
+    </div> -->
 </div>
 </template>
 
 <script>
 import Tabs from "./components/TabsSection";
 import Videos from "../views/Videos";
+import Landing from "../views/Landing";
 
 export default {
     components: {
         // Tabs,
-        Videos,
+        // Videos,
+        Landing,
     },
     name: "index",
     bodyClass: "index-page",
