@@ -25,6 +25,7 @@ import _ from 'lodash'
 import { firestorePlugin } from 'vuefire'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import {Modal} from '@/components'
 
 Vue.config.productionTip = false; 
 
@@ -42,6 +43,8 @@ Vue.use(firestorePlugin)
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
+
+Vue.component(Modal)
 
 const NavbarStore =  {
 showNavbar:false
