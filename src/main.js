@@ -17,12 +17,14 @@ import App from "./App.vue";
 import router from "./router"; 
 
 import MaterialKit from "./plugins/material-kit"; 
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 import VueYoutube from 'vue-youtube'
 import VueFacebookPage from 'vue-facebook-page'
 import _ from 'lodash'
 import { firestorePlugin } from 'vuefire'
-import VueVideoPlayer from 'vue-video-player'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.config.productionTip = false; 
 
@@ -36,14 +38,10 @@ Vue.use(VueFacebookPage, 219660669313598)
 
 Vue.use(firestorePlugin)
 
-// require videojs style
-import 'video.js/dist/video-js.css'
-// import 'vue-video-player/src/custom-theme.css'
-
-Vue.use(VueVideoPlayer, /* {
-  options: global default options,
-  events: global videojs events
-} */)
+// Install BootstrapVue
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
 
 const NavbarStore =  {
 showNavbar:false
