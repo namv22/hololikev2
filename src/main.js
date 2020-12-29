@@ -12,11 +12,11 @@
 //
 // * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-import Vue from "vue"; 
-import App from "./App.vue"; 
-import router from "./router"; 
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
 
-import MaterialKit from "./plugins/material-kit"; 
+import MaterialKit from "./plugins/material-kit";
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 import VueYoutube from 'vue-youtube'
@@ -25,11 +25,12 @@ import _ from 'lodash'
 import { firestorePlugin } from 'vuefire'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import {Modal} from '@/components'
+import { Modal } from '@/components'
+import moment from 'moment'
 
-Vue.config.productionTip = false; 
+Vue.config.productionTip = false;
 
-Vue.use(MaterialKit); 
+Vue.use(MaterialKit);
 
 Vue.use(VueYoutube)
 
@@ -46,19 +47,24 @@ Vue.use(IconsPlugin)
 
 Vue.component(Modal)
 
-const NavbarStore =  {
-showNavbar:false
-}; 
+Vue.filter('formatDate', function (value) {
+    if (!value) return ''
+    return moment(value.toString()).format('MM/DD/YYYY hh:mm')
+})
 
-Vue.mixin( {
-data() {
-return {
-NavbarStore
-    }; 
-}
-}); 
+const NavbarStore = {
+    showNavbar: false
+};
 
-new Vue( {
-router, 
-render:h => h(App)
+Vue.mixin({
+    data() {
+        return {
+            NavbarStore
+        };
+    }
+});
+
+new Vue({
+    router,
+    render: h => h(App)
 }).$mount("#app"); 
