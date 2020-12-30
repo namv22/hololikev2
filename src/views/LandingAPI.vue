@@ -122,9 +122,8 @@ export default {
       videos: [],
       reformattedSearchString: "",
       api: {
-        baseUrl: "https://www.googleapis.com/youtube/v3/search?",
+        baseUrl: "https://www.googleapis.com/youtube/v3/videos?",
         part: "snippet",
-        type: "video",
         order: "date",
         maxResults: 10,
         channelId: "UCwq3aenbgJR1ZWLvBi2JvTA",
