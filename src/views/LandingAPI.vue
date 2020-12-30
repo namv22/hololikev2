@@ -77,13 +77,17 @@
 </template>
 
 <script>
-import axios from 'axios'; 
+import axios from "axios";
 import VideosAPI from "./VideosAPI.vue";
+// import SearchForm from "./SearchForm.vue";
+import Pagination from "./Pagination.vue";
 
 export default {
   bodyClass: "landing-page",
   components: {
     VideosAPI,
+    // SearchForm,
+    // Pagination,
   },
   props: {
     header: {
@@ -122,7 +126,7 @@ export default {
       videos: [],
       reformattedSearchString: "",
       api: {
-        baseUrl: "https://www.googleapis.com/youtube/v3/videos?",
+        baseUrl: "https://www.googleapis.com/youtube/v3/search?",
         part: "snippet",
         order: "date",
         maxResults: 10,
@@ -204,7 +208,7 @@ export default {
           this.videos = res.data.items;
           this.api.prevPageToken = res.data.prevPageToken;
           this.api.nextPageToken = res.data.nextPageToken;
-          console.log('search result', res);
+          console.log("search result", res);
         })
         .catch((error) => console.log(error));
     },

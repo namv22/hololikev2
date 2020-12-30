@@ -18,6 +18,7 @@
     <!-- <tabs></tabs> -->
     <!-- <videos></videos> -->
     <!-- <landing></landing> -->
+    <SearchForm v-on:search="search" />
     <landingapi></landingapi>
     <!-- </div>
             </div>
@@ -31,6 +32,7 @@ import Tabs from "./components/TabsSection";
 import Videos from "./Videos";
 import Landing from "./Landing";
 import landingapi from "./LandingAPI";
+import SearchForm from "./SearchForm.vue";
 
 export default {
   components: {
@@ -38,6 +40,7 @@ export default {
     // Videos,
     // Landing,
     landingapi,
+    SearchForm,
   },
   name: "index",
   bodyClass: "index-page",
@@ -53,6 +56,18 @@ export default {
       email: null,
       password: null,
       leafShow: false,
+      videos: [],
+      reformattedSearchString: "",
+      api: {
+        baseUrl: "https://www.googleapis.com/youtube/v3/search?",
+        part: "snippet",
+        order: "date",
+        maxResults: 10,
+        channelId: "UCwq3aenbgJR1ZWLvBi2JvTA",
+        key: "AIzaSyCwBJ0TFJbt6q3LjXxgSB3GhzpO6h11uKE",
+        prevPageToken: "",
+        nextPageToken: "",
+      },
     };
   },
   methods: {
@@ -62,6 +77,55 @@ export default {
       } else {
         this.leafShow = true;
       }
+    },
+    search(searchParams) {
+      this.reformattedSearchString = searchParams.join(" ");
+      this.api.q = searchParams.join("+");
+      const { baseUrl, part, type, order, maxResults, q, key } = this.api;
+      const apiUrl = `${baseUrl}part=${part}&type=${type}&order=${order}&q=${q}&maxResults=${maxResults}&key=${key}`;
+      this.getData(apiUrl);
+    },
+
+    prevPage() {
+      const {
+        baseUrl,
+        part,
+        type,
+        order,
+        maxResults,
+        q,
+        key,
+        prevPageToken,
+      } = this.api;
+      const apiUrl = `${baseUrl}part=${part}&type=${type}&order=${order}&q=${q}&maxResults=${maxResults}&key=${key}&pageToken=${prevPageToken}`;
+      this.getData(apiUrl);
+    },
+
+    nextPage() {
+      const {
+        baseUrl,
+        part,
+        type,
+        order,
+        maxResults,
+        q,
+        key,
+        nextPageToken,
+      } = this.api;
+      const apiUrl = `${baseUrl}part=${part}&type=${type}&order=${order}&q=${q}&maxResults=${maxResults}&key=${key}&pageToken=${nextPageToken}`;
+      this.getData(apiUrl);
+    },
+
+    getData(apiUrl) {
+      axios
+        .get(apiUrl)
+        .then((res) => {
+          this.videos = res.data.items;
+          this.api.prevPageToken = res.data.prevPageToken;
+          this.api.nextPageToken = res.data.nextPageToken;
+          console.log("search result", res);
+        })
+        .catch((error) => console.log(error));
     },
   },
   computed: {

@@ -73,9 +73,7 @@ export default {
     playVideo() {
       this.player.playVideo();
     },
-    playing() {
-      console.log("\o/ we are watching!!!");
-    },
+    playing() {},
     modalId(i) {
       return "game";
     },
