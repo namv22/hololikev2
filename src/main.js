@@ -17,54 +17,54 @@ import App from "./App.vue";
 import router from "./router";
 
 import MaterialKit from "./plugins/material-kit";
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
-import VueYoutube from 'vue-youtube'
-import VueFacebookPage from 'vue-facebook-page'
-import _ from 'lodash'
-import { firestorePlugin } from 'vuefire'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-import { Modal } from '@/components'
-import moment from 'moment'
+import VueYoutube from "vue-youtube";
+import VueFacebookPage from "vue-facebook-page";
+import _ from "lodash";
+import { firestorePlugin } from "vuefire";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+import { Modal } from "@/components";
+import moment from "moment";
 
 Vue.config.productionTip = false;
 
 Vue.use(MaterialKit);
 
-Vue.use(VueYoutube)
+Vue.use(VueYoutube);
 
 // The plugin is loaded here.
 // You have to pass your FB app Id as a second parameter
-Vue.use(VueFacebookPage, 219660669313598)
+Vue.use(VueFacebookPage, 219660669313598);
 
-Vue.use(firestorePlugin)
+Vue.use(firestorePlugin);
 
 // Install BootstrapVue
-Vue.use(BootstrapVue)
+Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin)
+Vue.use(IconsPlugin);
 
-Vue.component(Modal)
+Vue.component(Modal);
 
-Vue.filter('formatDate', function (value) {
-    if (!value) return ''
-    return moment(value.toString()).format('MM/DD/YYYY hh:mm')
-})
+Vue.filter("formatDate", function (value) {
+  if (!value) return "";
+  return moment(value.toString()).format("MM/DD/YYYY hh:mm");
+});
 
 const NavbarStore = {
-    showNavbar: false
+  showNavbar: false,
 };
 
 Vue.mixin({
-    data() {
-        return {
-            NavbarStore
-        };
-    }
+  data() {
+    return {
+      NavbarStore,
+    };
+  },
 });
 
 new Vue({
-    router,
-    render: h => h(App)
-}).$mount("#app"); 
+  router,
+  render: (h) => h(App),
+}).$mount("#app");

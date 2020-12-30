@@ -24,10 +24,10 @@
 export default {
   name: "modal",
   methods: {
-    closeModal: function() {
+    closeModal: function () {
       this.$emit("close");
-    }
-  }
+    },
+  },
 };
 </script>
 
