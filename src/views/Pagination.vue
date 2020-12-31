@@ -1,18 +1,22 @@
 <template>
   <div class="container">
-    <nav>
-      <ul class="pagination justify-content-end">
+    <nav class="button">
+      <ul class="pagination">
         <li
-          class="page-item"
+          class="page-item li-item"
           v-bind:class="{ disabled: prevPageToken === undefined }"
         >
-          <a @click="prevPage" class="page-link" href="#">Previous</a>
+          <b-button @click="prevPage" pill variant="outline-danger"
+            >Previous</b-button
+          >
         </li>
         <li
-          class="page-item"
+          class="page-item li-item"
           v-bind:class="{ disabled: nextPageToken === undefined }"
         >
-          <a @click="nextPage" class="page-link" href="#">Next</a>
+          <b-button @click="nextPage" pill variant="outline-success"
+            >Next</b-button
+          >
         </li>
       </ul>
     </nav>
@@ -30,6 +34,9 @@ export default {
     nextPage() {
       this.$emit("next-page");
     },
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
   },
 };
 </script>
@@ -37,5 +44,17 @@ export default {
 <style scoped>
 .page-link {
   box-shadow: none !important;
+}
+
+.container {
+  margin: auto;
+}
+
+.button {
+  margin: auto;
+}
+
+.li-item {
+  margin: 10px;
 }
 </style>
