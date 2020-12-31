@@ -27,6 +27,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import { Modal } from "@/components";
 import moment from "moment";
+import VueMaterial from "vue-material";
+import "vue-material/dist/vue-material.min.css";
+import "vue-material/dist/theme/default.css";
 
 Vue.config.productionTip = false;
 
@@ -47,9 +50,11 @@ Vue.use(IconsPlugin);
 
 Vue.component(Modal);
 
+Vue.use(VueMaterial);
+
 Vue.filter("formatDate", function (value) {
   if (!value) return "";
-  return moment(value.toString()).format("MM/DD/YYYY hh:mm");
+  return moment(value.toString()).format("DD/MM/YYYY hh:mm");
 });
 
 const NavbarStore = {

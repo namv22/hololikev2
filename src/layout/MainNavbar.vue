@@ -27,7 +27,7 @@
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
             <md-list>
-              <md-list-item href="https://discord.gg/X6R4eyB5">
+              <md-list-item href="https://discord.gg/hololivevietnam">
                 <img alt="Hololike FB" src="../assets/img/discord.png" />
                 <md-tooltip md-direction="bottom"
                   >Join our Discord server</md-tooltip
