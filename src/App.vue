@@ -11,7 +11,6 @@
           link-text="Tớ Mang Clip Hololive Về Dịch"
         />
       </div>
-      <router-view name="footer" />
     </div>
   </div>
 </template>
