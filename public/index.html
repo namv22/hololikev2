@@ -34,6 +34,9 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.css" rel="stylesheet">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    
 </head>
 
 <body>
@@ -41,6 +44,13 @@
     <strong>We're sorry but vue-material-kit doesn't work properly without JavaScript enabled. Please enable it to
       continue.</strong>
   </noscript>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.js"></script>
+    <script>
+      new Vue({
+        el: '#app'
+      })
+    </script>
   <div id="app"></div>
   <!-- built files will be auto injected -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -30,8 +30,17 @@ import moment from "moment";
 import VueMaterial from "vue-material";
 import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";
+import Vuesax from 'vuesax';
+import VueCoreVideoPlayer from 'vue-core-video-player';
 
 Vue.config.productionTip = false;
+
+import 'vuesax/dist/vuesax.css' //Vuesax styles
+  Vue.use(Vuesax, {
+    // options here
+  });
+
+  Vue.use(VueCoreVideoPlayer)
 
 Vue.use(MaterialKit);
 
