@@ -48,117 +48,35 @@
     },
     data() {
       return {
-        // api: {
-        //   baseUrl: "https://www.googleapis.com/youtube/v3/search?",
-        //   part: "snippet",
-        //   type: "video",
-        //   order: "date",
-        //   maxResults: 20,
-        //   q: "",
-        //   channelId: "UCwq3aenbgJR1ZWLvBi2JvTA",
-        //   key: "AIzaSyCwBJ0TFJbt6q3LjXxgSB3GhzpO6h11uKE",
-        //   prevPageToken: "",
-        //   nextPageToken: "",
-        // },
         gen0s: [{
             id: 'sora',
             name: 'Tokino Sora',
-            BG: 'https://pbs.twimg.com/profile_images/1421767500669153282/_Xm7em5Z_400x400.jpg'
+            BG: 'https://hololive.hololivepro.com/wp-content/uploads/2021/05/tokino_sora_thumb.png'
           },
           {
             id: 'roboco',
             name: 'Roboco-san',
-            BG: 'https://pbs.twimg.com/profile_images/1418732837356728324/SEHyG9oy_400x400.jpg'
+            BG: 'https://hololive.hololivepro.com/wp-content/uploads/2021/08/roboco_list_thumb.png'
           },
           {
             id: 'miko',
             name: 'Sakura Miko',
-            BG: 'https://pbs.twimg.com/profile_images/1411692442894565379/0J9JPi7s_400x400.jpg'
+            BG: 'https://hololive.hololivepro.com/wp-content/uploads/2020/06/miko_icon_210831.png'
           },
           {
             id: 'suisei',
             name: 'Hoshimachi Suisei',
-            BG: 'https://pbs.twimg.com/profile_images/1410184335961980930/L44DM-JR_400x400.jpg'
+            BG: 'https://hololive.hololivepro.com/wp-content/uploads/2020/10/hoshimachi_suisei_thumb.png'
           },
           {
             id: 'azki',
             name: 'AZKi',
-            BG: 'https://pbs.twimg.com/profile_images/1396267467232534530/g9hbbZFI_400x400.jpg'
+            BG: 'https://hololive.hololivepro.com/wp-content/uploads/2021/05/azki_thumb.png'
           },
         ],
       };
     },
     methods: {
-      // search(searchParams) {
-      //   this.reformattedSearchString = searchParams;
-      //   this.api.q = searchParams;
-      //   const {
-      //     baseUrl,
-      //     part,
-      //     type,
-      //     order,
-      //     maxResults,
-      //     q,
-      //     channelId,
-      //     key,
-      //   } = this.api;
-      //   const apiUrl = `${baseUrl}part=${part}&type=${type}&order=${order}&q=${q}&maxResults=${maxResults}&channelId=${channelId}&key=${key}`;
-      //   this.getData(apiUrl);
-      // },
-
-      // prevPage() {
-      //   const {
-      //     baseUrl,
-      //     part,
-      //     type,
-      //     order,
-      //     maxResults,
-      //     q,
-      //     channelId,
-      //     key,
-      //     prevPageToken,
-      //   } = this.api;
-      //   const apiUrl = `${baseUrl}part=${part}&type=${type}&order=${order}&q=${q}&maxResults=${maxResults}&channelId=${channelId}&key=${key}&pageToken=${prevPageToken}`;
-      //   this.getData(apiUrl);
-      // },
-
-      // nextPage() {
-      //   const {
-      //     baseUrl,
-      //     part,
-      //     type,
-      //     order,
-      //     maxResults,
-      //     q,
-      //     channelId,
-      //     key,
-      //     nextPageToken,
-      //   } = this.api;
-      //   const apiUrl = `${baseUrl}part=${part}&type=${type}&order=${order}&q=${q}&maxResults=${maxResults}&channelId=${channelId}&key=${key}&pageToken=${nextPageToken}`;
-      //   this.getData(apiUrl);
-      // },
-
-      // getData(apiUrl) {
-      //   axios.get(apiUrl).then((res) => {
-      //     this.videos = res.data.items;
-      //     this.api.prevPageToken = res.data.prevPageToken;
-      //     this.api.nextPageToken = res.data.nextPageToken;
-      //   });
-      //   // .catch(error => console.log(error));
-      // },
-      // created() {
-      //   const {
-      //     baseUrl,
-      //     part,
-      //     type,
-      //     order,
-      //     maxResults,
-      //     channelId,
-      //     key,
-      //   } = this.api;
-      //   const apiUrl = `${baseUrl}part=${part}&type=${type}&order=${order}&maxResults=${maxResults}&channelId=${channelId}&key=${key}`;
-      //   this.getData(apiUrl);
-      // },
       onClick(event) {
         this.ripple(event);
 
